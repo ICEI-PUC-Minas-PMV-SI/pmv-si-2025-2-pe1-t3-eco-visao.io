@@ -23,6 +23,7 @@
       id="sidebarBackdrop"
       class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"
     ></div>
+
     <aside
       id="sidebar"
       class="fixed lg:sticky top-0 left-0 h-screen w-64 bg-gradient-to-b from-green-600 to-green-700 z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300"
@@ -36,6 +37,7 @@
         </div>
         <p id="userName" class="text-white/80 text-sm mt-2">Olá, Usuário</p>
       </div>
+
       <nav class="flex-1 p-6">
         <ul class="space-y-2" id="menuItems">
           <li>
@@ -89,6 +91,7 @@
           </li>
         </ul>
       </nav>
+
       <div class="p-6 border-t border-green-400/20 space-y-2">
         <a href="./profile.html">
           <button
@@ -124,8 +127,9 @@
               >usuario@exemplo.com</span
             >
             <button class="bg-gray-100 p-2 rounded-lg hover:bg-gray-200">
-              <i class="fas fa-user"></i></button
-          ></a>
+              <i class="fas fa-user"></i>
+            </button>
+          </a>
         </div>
       </header>
 
@@ -139,6 +143,7 @@
               Dados e análises sobre o desmatamento em tempo real
             </p>
           </div>
+
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bg-white rounded-xl p-6 shadow">
               <div class="flex items-center justify-between mb-4">
@@ -165,6 +170,7 @@
             </div>
           </div>
         </div>
+
         <section class="space-y-6">
           <div class="bg-white rounded-xl shadow p-6 mt-8">
             <div class="flex justify-between items-center mb-4">
@@ -172,8 +178,9 @@
                 Mapa da Região
               </h2>
             </div>
+           
             <iframe
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-43.9311%2C-19.9779%2C-43.9111%2C-19.9579&amp;layer=mapnik&amp;marker=-19.9679%2C-43.9211"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-43.9311%2C-19.9779%2C-43.9111%2C-19.9579&amp;layer=mapnik"
               style="
                 border: none;
                 width: 100%;
@@ -184,53 +191,19 @@
               loading="lazy"
             ></iframe>
           </div>
+
           <div class="bg-white rounded-xl shadow p-6">
             <div class="flex justify-between items-center mb-4">
               <h2 class="text-lg font-semibold text-gray-800">
                 Alertas Recentes
               </h2>
             </div>
-            <ul class="space-y-3">
-              <li
-                class="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50"
-              >
-                <div class="flex items-center gap-3">
-                  <i class="fas fa-tree text-green-500"></i>
-                  <span>Desmatamento em área próxima</span>
-                </div>
-                <span class="text-sm text-gray-500">10/09/2025</span>
-              </li>
-              <li
-                class="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50"
-              >
-                <div class="flex items-center gap-3">
-                  <i class="fas fa-fire text-red-500"></i>
-                  <span>Queimada detectada</span>
-                </div>
-                <span class="text-sm text-gray-500">22/09/2025</span>
-              </li>
-              <li
-                class="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50"
-              >
-                <div class="flex items-center gap-3">
-                  <i class="fas fa-mountain text-gray-500"></i>
-                  <span>Área de mineração irregular</span>
-                </div>
-                <span class="text-sm text-gray-500">20/09/2025</span>
-              </li>
-              <li
-                class="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50"
-              >
-                <div class="flex items-center gap-3">
-                  <i class="fas fa-hippo text-blue-500"></i>
-                  <span>Avistamento de animas em risco</span>
-                </div>
-                <span class="text-sm text-gray-500">18/09/2025</span>
-              </li>
-            </ul>
+        
+            <ul class="space-y-3" id="alertasRecentes"></ul>
           </div>
         </section>
       </div>
+
       <script src="./assets/js/dashboard.js"></script>
     </main>
   </body>
