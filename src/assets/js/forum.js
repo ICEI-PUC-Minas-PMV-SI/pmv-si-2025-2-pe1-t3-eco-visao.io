@@ -4,7 +4,6 @@ function getLoggedUserId() {
   return localStorage.getItem("userId");
 }
 
-// Logout
 document.getElementById("logoutBtn")?.addEventListener("click", () => {
   localStorage.clear();
   window.location.href = "/radar-florestal.io";
