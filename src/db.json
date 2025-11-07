@@ -12,16 +12,22 @@
       "avatar": "data:image/jpeg;base64,...",
       "alerts": [
         {
-          "id": "alert1",
-          "message": "Sua senha será expirada em 5 dias.",
-          "read": false,
-          "createdAt": "2025-10-31T14:00:00Z"
+          "id": 1,
+          "type": "desmatamento",
+          "message": "Área desmatada detectada na região norte",
+          "lat": -3.4653,
+          "lng": -62.2159,
+          "createdAt": "2025-11-06T12:00:00Z",
+          "read": false
         },
         {
-          "id": "alert2",
-          "message": "Novo evento disponível no fórum.",
-          "read": true,
-          "createdAt": "2025-10-30T12:00:00Z"
+          "id": 2,
+          "type": "queimadas",
+          "message": "Foco de incêndio detectado próximo à zona rural",
+          "lat": -10.652,
+          "lng": -50.121,
+          "createdAt": "2025-11-07T08:30:00Z",
+          "read": true
         }
       ],
       "posts": [
