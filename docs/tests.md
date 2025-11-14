@@ -41,15 +41,8 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Dados de entrada** | Inserção de dados válidos no formulário de gerenciamento de login
 **Resultado obtido** | Sucesso
 
-**Caso de Teste** | **CT03 - Emissão de Relatório**
- :--------------: | ------------
-**Procedimento**  | 1) -- <br> 2) -- <br> 2) -- <br> 3) --
-**Requisitos associados** | RF-003
-**Resultado esperado** | --
-**Dados de entrada** | --
-**Resultado obtido** | Sucesso
 
-**Caso de Teste** | **CT04 - Denunciar Anomalia**
+**Caso de Teste** | **CT03 - Denunciar Anomalia**
  :--------------: | ------------
 **Procedimento**  | 1) No Dashboard, clique no botão "Meus Alertas". <br> 2) Clique em "Novo Alerta". <br> 2) Preencha o formulário descrevendo o alerta. <br> 3) Clique no botão "Confirmar". <br> 4) Clique no local desejado do mapa.
 **Requisitos associados** | RF-004
@@ -57,7 +50,7 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Dados de entrada** | Inserção da descrição e título do novo alerta
 **Resultado obtido** | Sucesso
 
-**Caso de Teste** | **CT05 - Visualização do Mapa Interativo**
+**Caso de Teste** | **CT04 - Visualização do Mapa Interativo**
  :--------------: | ------------
 **Procedimento**  | 1) No Dashboard, clique no botão "Meus Alertas". <br> 2) Desça a página. <br> 3) Mova, amplie ou afaste o mapa como desejar.
 **Requisitos associados** | RF-005
@@ -65,7 +58,7 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Dados de entrada** | Nenhum
 **Resultado obtido** | Sucesso
 
-**Caso de Teste** | **CT06 - Visualizar Histórico de Ocorrências**
+**Caso de Teste** | **CT05 - Visualizar Histórico de Ocorrências**
  :--------------: | ------------
 **Procedimento**  | 1) No Dashboard, escolha o tipo de ocorrência. <br> 2) Desça a página. <br> 3) Visualize o histórico em "Alertas Recentes".
 **Requisitos associados** | RF-006
@@ -73,7 +66,7 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Dados de entrada** | Nenhum
 **Resultado obtido** | Sucesso
 
-**Caso de Teste** | **CT07 - Visualização de Conteúdo Informativo Sobre o Desmatamento**
+**Caso de Teste** | **CT06 - Visualização de Conteúdo Informativo Sobre o Desmatamento**
  :--------------: | ------------
 **Procedimento**  | 1) Acesse o endereço www.radarflorestal.com.br <br> 2) Clique em "Sobre", "Benefícios", "Depoimentos" ou desça a página. <br>
 **Requisitos associados** | RF-007
@@ -81,24 +74,12 @@ Preencha a tabela com o plano dos testes. Para cada Caso de Teste (CT), associe 
 **Dados de entrada** | Nenhum
 **Resultado obtido** | Sucesso
 
-**Caso de Teste** | **CT08 - //**
- :--------------: | ------------
-**Procedimento**  | 1) -- <br> 2) -- <br> 3) --
-**Requisitos associados** | RF-008
-**Resultado esperado** | --
-**Dados de entrada** | --
-**Resultado obtido** | Sucesso
 
 ## Registro dos Testes de Software
 
 Esta seção deve apresentar o relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado no plano de testes pré-definido. Documente cada caso de teste apresentando um vídeo ou animação que comprove o funcionamento da funcionalidade. Veja os exemplos a seguir.
 
 |*Caso de Teste*                                 |*CT01 - Criar conta parte 1*                                         |
-|---|---|
-|Requisito Associado | RF-001 - A aplicação deve permitir que os usuários criem uma conta e gerenciem seu cadastro|
-|Link do vídeo do teste realizado: |https://drive.google.com/file/d/1m6SZKE1zZpWN-n38p3XOm6UD08mEGh8p/view?usp=sharing| 
-
-|*Caso de Teste*                                 |*CT02 - Criar conta parte 2*                                        |
 |---|---|
 |Requisito Associado | RF-001 - A aplicação deve permitir que os usuários criem uma conta e gerenciem seu cadastro|
 |Link do vídeo do teste realizado: |https://drive.google.com/file/d/1m6SZKE1zZpWN-n38p3XOm6UD08mEGh8p/view?usp=sharing| 
