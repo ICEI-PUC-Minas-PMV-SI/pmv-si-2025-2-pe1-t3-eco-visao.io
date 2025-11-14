@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const currentPassword = document.getElementById('currentPassword');
   const newPassword = document.getElementById('newPassword');
   const confirmPassword = document.getElementById('confirmPassword');
+  const imageUpload = document.getElementById('imageUpload');
+  const profileImg = document.getElementById('profileImg');
+  const profilePlaceholder = document.getElementById('profilePlaceholder');
   const successMsg = document.getElementById('successMsg');
   const cancelBtn = document.getElementById('cancelBtn');
 
