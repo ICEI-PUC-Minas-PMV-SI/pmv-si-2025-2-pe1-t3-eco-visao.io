@@ -6,7 +6,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const email = document.getElementById('email');
   const cpf = document.getElementById('cpf');
   const endereco = document.getElementById('endereco');
- 
+  const dataNascimento = document.getElementById('dataNascimento');
+  const currentPassword = document.getElementById('currentPassword');
+  const newPassword = document.getElementById('newPassword');
+  const confirmPassword = document.getElementById('confirmPassword');
+  const successMsg = document.getElementById('successMsg');
+  const cancelBtn = document.getElementById('cancelBtn');
 
   loadProfile();
 
@@ -197,6 +202,132 @@ document.addEventListener('DOMContentLoaded', function () {
     return true;
   }
 
+  function validateEndereco() {
+    const value = endereco.value.trim();
+
+    // Campo opcional - se vazio, é válido
+    if (value === '') {
+      clearError(endereco);
+      return true;
+    }
+
+    // Se preenchido, valida o tamanho mínimo
+    if (value.length < 5) {
+      showError(endereco, 'O endereço deve ter pelo menos 5 caracteres');
+      return false;
+    }
+    clearError(endereco);
+    return true;
+  }
+
+  function validateDataNascimento() {
+    const value = dataNascimento.value;
+
+    // Campo opcional - se vazio, é válido
+    if (value === '') {
+      clearError(dataNascimento);
+      return true;
+    }
+
+    // Se preenchido, valida a idade
+    const birthDate = new Date(value);
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+
+    if (age < 18) {
+      showError(dataNascimento, 'Você deve ter pelo menos 18 anos');
+      return false;
+    }
+
+    if (age > 120) {
+      showError(dataNascimento, 'Por favor, insira uma data válida');
+      return false;
+    }
+
+    clearError(dataNascimento);
+    return true;
+  }
+
+  function validateNewPassword() {
+    const value = newPassword.value;
+
+    // Se não há senha atual e nem nova senha, campo é opcional
+    if (!currentPassword.value && !value) {
+      clearError(newPassword);
+      return true;
+    }
+
+    // Se preencheu senha atual mas não a nova, exigir nova senha
+    if (currentPassword.value && !value) {
+      showError(newPassword, 'A nova senha é obrigatória');
+      return false;
+    }
+
+    // Se preencheu nova senha, validar formato
+    if (value && value.length < 6) {
+      showError(newPassword, 'A senha deve ter pelo menos 6 caracteres');
+      return false;
+    }
+
+    if (value && (!/[a-zA-Z]/.test(value) || !/[0-9]/.test(value))) {
+      showError(newPassword, 'A senha deve conter letras e números');
+      return false;
+    }
+
+    clearError(newPassword);
+    return true;
+  }
+
+  function validateConfirmPassword() {
+    const value = confirmPassword.value;
+    const newPasswordValue = newPassword.value;
+
+    // Se não há senha atual e nem confirmação, campo é opcional
+    if (!currentPassword.value && !value) {
+      clearError(confirmPassword);
+      return true;
+    }
+
+    // Se preencheu nova senha, validar se confirmação coincide
+    if (value !== newPasswordValue) {
+      showError(confirmPassword, 'As senhas não coincidem');
+      return false;
+    }
+
+    clearError(confirmPassword);
+    return true;
+  }
+
+  function validatePasswords() {
+    const storedPassword = localStorage.getItem('userPassword');
+
+    if (currentPassword.value) {
+      if (storedPassword && currentPassword.value !== storedPassword) {
+        showError(currentPassword, 'Senha atual incorreta');
+        return false;
+      }
+
+      const isNewPasswordValid = validateNewPassword();
+      const isConfirmPasswordValid = validateConfirmPassword();
+
+      return isNewPasswordValid && isConfirmPasswordValid;
+    } else {
+      if (newPassword.value || confirmPassword.value) {
+        if (storedPassword) {
+          showError(currentPassword, 'Digite a senha atual para alterá-la');
+          return false;
+        }
+      }
+    }
+
+    clearError(currentPassword);
+    return true;
+  }
 
   function showError(element, message) {
     element.classList.add('border-red-500', 'focus:ring-red-400');
@@ -258,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function loadProfile() {
-    const savedProfile = localStorage.getItem('userProfile') ;
+    const savedProfile = localStorage.getItem('userProfile');
     if (savedProfile) {
       const profileData = JSON.parse(savedProfile);
 
