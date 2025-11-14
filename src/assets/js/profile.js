@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('profileForm');
   const firstName = document.getElementById('firstName');
   const lastName = document.getElementById('lastName');
+  const email = document.getElementById('email');
+  const cpf = document.getElementById('cpf');
+  const endereco = document.getElementById('endereco');
+ 
 
   loadProfile();
 
@@ -46,6 +50,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   firstName.addEventListener('blur', () => validateFirstName());
   lastName.addEventListener('blur', () => validateLastName());
+  email.addEventListener('blur', () => validateEmail());
+  cpf.addEventListener('blur', () => validateCPF());
+  endereco.addEventListener('blur', () => validateEndereco());
+  dataNascimento.addEventListener('blur', () => validateDataNascimento());
+  newPassword.addEventListener('input', () => validateNewPassword());
+  confirmPassword.addEventListener('input', () => validateConfirmPassword());
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -123,6 +133,71 @@ document.addEventListener('DOMContentLoaded', function () {
     return true;
   }
 
+  function validateEmail() {
+    const value = email.value.trim();
+
+    // Campo opcional - se vazio, é válido
+    if (value === '') {
+      clearError(email);
+      return true;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(value)) {
+      showError(email, 'Por favor, insira um email válido');
+      return false;
+    }
+    clearError(email);
+    return true;
+  }
+
+  function validateCPF() {
+    const value = cpf.value.replace(/\D/g, '');
+
+    if (value === '') {
+      clearError(cpf);
+      return true;
+    }
+
+    if (value.length !== 11) {
+      showError(cpf, 'O CPF deve ter 11 dígitos');
+      return false;
+    }
+
+    if (/^(\d)\1{10}$/.test(value)) {
+      showError(cpf, 'CPF inválido');
+      return false;
+    }
+
+    let sum = 0;
+    let remainder;
+
+    for (let i = 1; i <= 9; i++) {
+      sum += parseInt(value.substring(i - 1, i)) * (11 - i);
+    }
+    remainder = (sum * 10) % 11;
+    if (remainder === 10 || remainder === 11) remainder = 0;
+    if (remainder !== parseInt(value.substring(9, 10))) {
+      showError(cpf, 'CPF inválido');
+      return false;
+    }
+
+    sum = 0;
+    for (let i = 1; i <= 10; i++) {
+      sum += parseInt(value.substring(i - 1, i)) * (12 - i);
+    }
+    remainder = (sum * 10) % 11;
+    if (remainder === 10 || remainder === 11) remainder = 0;
+    if (remainder !== parseInt(value.substring(10, 11))) {
+      showError(cpf, 'CPF inválido');
+      return false;
+    }
+
+    clearError(cpf);
+    return true;
+  }
+
+
   function showError(element, message) {
     element.classList.add('border-red-500', 'focus:ring-red-400');
     element.classList.remove('border-gray-300', 'focus:ring-green-400');
@@ -157,6 +232,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const profileData = {
       firstName: firstName.value.trim(),
       lastName: lastName.value.trim(),
+      email: email.value.trim(),
+      cpf: cpf.value,
+      endereco: endereco.value.trim(),
+      dataNascimento: dataNascimento.value,
       profileImage: profileImg.src
     };
 
@@ -179,12 +258,16 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function loadProfile() {
-    const savedProfile = localStorage.getItem('userProfile');
+    const savedProfile = localStorage.getItem('userProfile') ;
     if (savedProfile) {
       const profileData = JSON.parse(savedProfile);
 
       firstName.value = profileData.firstName || '';
       lastName.value = profileData.lastName || '';
+      email.value = profileData.email || '';
+      cpf.value = profileData.cpf || '';
+      endereco.value = profileData.endereco || '';
+      dataNascimento.value = profileData.dataNascimento || '';
 
       if (profileData.profileImage && profileData.profileImage !== '') {
         profileImg.src = profileData.profileImage;
