@@ -192,7 +192,7 @@ Cenário 2: Usuário tentando confirmar se já existe um alerta próximo antes d
 | **Tempo para conclusão pelo especialista** | SIM | 5 | 10.57 segundos |
 
 
-    Bruno:Tentei abrir o site pelo celular e funcionou, mas demorou um pouco para carregar com meu 4G ruim. Quando finalmente abriu, consegui criar o alerta. Nada impossível, só podia estar mais rápido num momento tenso.
+    Bruno: Tentei abrir o site pelo celular e funcionou, mas demorou um pouco para carregar com meu 4G ruim. Quando finalmente abriu, consegui criar o alerta. Nada impossível, só podia estar mais rápido num momento tenso.
     
     Edenilson: Usei o site no celular enquanto caminhava e deu certo.A localização automática funcionou, o que ajudou muito. Só que qualquer travadinha já deixa a gente nervoso numa situação dessas. Seria bom otimizar para quem não está parado e confortável.
 
