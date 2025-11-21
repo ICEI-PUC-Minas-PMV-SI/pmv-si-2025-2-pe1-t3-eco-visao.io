@@ -122,10 +122,13 @@ Apresente os cenários de testes utilizados na realização dos testes de usabil
 
 ## Cenários de Teste de Usabilidade
 
-| Nº do Cenário | Descrição do cenário |
-|---------------|----------------------|
-| 1             | Você é uma pessoa que deseja comprar um iphone. Encontre no site um iphone e veja detalhes de localização e contato da loja que anunciando. |
-| 2             | Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço. |
+| Nº do Cenário | Objetivo | Descrição do cenário |
+|---------------|----------|----------------------|
+| 1             |Usuário criando um alerta de queimada pela primeira vez.| Um usuário leigo acessa o site após ver fumaça perto de casa. Ele tenta criar um alerta rapidamente, sem ler instruções detalhadas. Avaliar se ele encontra facilmente o botão de “Criar Alerta”, entende os campos obrigatórios e consegue enviar o alerta sem erros. |
+| 2             | Usuário tentando confirmar se já existe um alerta próximo antes de criar outro. | O usuário acessa o site e, antes de criar um novo alerta, quer confirmar se alguém já publicou algo sobre aquela região. Ele usa busca, filtros e mapa interativo. Avaliar clareza visual, precisão e velocidade. |
+| 3             | Usuário redigindo um fórum detalhando uma queimada já reportada | Após publicar um alerta, o usuário deseja criar um fórum relatando detalhes: hora, intensidade, direção do vento, possíveis riscos. Avaliar se o editor de texto é claro, se há categorias e se o usuário entende como vincular o fórum ao alerta correspondente. |
+| 4             | Usuário acessando o site pelo celular em situação de emergência | A pessoa está no meio da rua, vê o incêndio e usa o celular com sinal ruim. Ela precisa abrir o site, identificar sua localização e criar o alerta rapidamente. Avaliar tempo de carregamento, adaptação da interface e se algo atrapalha a ação principal. |
+| 5             | Moderador comunitário revisando alertas e fóruns | Um usuário engajado entra para verificar se novos alertas precisam de sinalização, se há duplicidade e se fóruns estão adequados. Avaliar se existem ferramentas para denunciar, organizar ou marcar conteúdos como relevantes. |
 
 
 
