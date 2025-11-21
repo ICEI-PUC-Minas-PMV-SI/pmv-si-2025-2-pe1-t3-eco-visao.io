@@ -134,47 +134,95 @@ Apresente os cenários de testes utilizados na realização dos testes de usabil
 
 ## Registro de Testes de Usabilidade
 
-Cenário 1: Você é uma pessoa que deseja comprar um iphone. Encontre no site um iphone e veja detalhes de localização e contato da loja que anunciando.
+Cenário 1: Usuário criando um alerta de queimada pela primeira vez.
 
 | Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
 |---------|-----------------|----------------------|---------------------------------|
-| 1       | SIM             | 5                    | 27.87 segundos                  |
-| 2       | SIM             | 5                    | 17.11 segundos                  |
-| 3       | SIM             | 5                    | 39.09 segundos                  |
+| Bruno     | SIM             | 4,5                   | 25.9 segundos                  |
+| Edenilson | SIM             | 5                  | 19.15 segundos                  |
+| Alice     | SIM             | 4,3                    | 39.09 segundos                  |
 |  |  |  |  |
-| **Média**     | 100%           | 5                | 28.02 segundos                           |
-| **Tempo para conclusão pelo especialista** | SIM | 5 | 8.66 segundos |
+| **Média**     | 100%           | 4,6               | 28.04 segundos                           |
+| **Tempo para conclusão pelo especialista** | SIM | 5 | 12.5 segundos |
 
 
-    Comentários dos usuários: Achei o site muito bom e intuitivo. 
-    Não tive dificuldades e acho que ficou bem intuitivo.
+    Edenilson: Consegui criar o alerta, mas precisei procurar um pouco pelo botão. Depois que achei, o formulário foi simples, só que fiquei na dúvida sobre quais informações eram realmente obrigatórias. Seria bom ter uma explicação mais direta ou um destaque nos campos importantes. No geral funcionou.
 
 
-Cenário 2: Você é uma pessoa que deseja comprar um smartphone até R$ 2.000,00. Encontre no site smartphone's nessa faixa de preço.
+Cenário 2: Usuário tentando confirmar se já existe um alerta próximo antes de criar outro.
 
 | Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
 |---------|-----------------|----------------------|---------------------------------|
-| 1       | SIM             | 5                    | 22.54 segundos                          |
-| 2       | SIM             | 5                    | 31.42 segundos                          |
-| 3       | SIM             | 4                    | 36.21 segundos                          |
+| Bruno     | SIM             | 5                    | 15.54 segundos                          |
+| Edenilson | SIM             | 3                    | 21.42 segundos                          |
+| Alice     | SIM             | 4                    | 28.21 segundos                          |
 |  |  |  |  |
 | **Média**     | 100%           | 4.67                | 30.05 segundos                           |
-| **Tempo para conclusão pelo especialista** | SIM | 5 | 13.57 segundos |
+| **Tempo para conclusão pelo especialista** | SIM | 5 | 11.57 segundos |
 
 
-    Comentários dos usuários: O site é fácil de acessar, mas algumas páginas poderiam 
-    redirecionar a gente automaticamente para outras. Senti a falta de mais opções de filtros, 
-    tanto na hora da pesquisa, quanto depois dela, nos resultados.
+    Bruno: Antes de criar meu alerta, tentei ver se já tinha algum na minha região. A busca funciona, mas fiquei meio perdido com os filtros. O mapa ajudou, só que demorou um pouco para carregar. Consegui confirmar que não havia alerta igual, mas poderia ser mais rápido e direto.
+
+
+   Cenário 3: Usuário redigindo um fórum detalhando uma queimada já reportada.
+
+| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
+|---------|-----------------|----------------------|---------------------------------|
+| Bruno     | SIM             | 5                   | 17.55 segundos                          |
+| Edenilson | SIM             | 4                    | 23.52 segundos                          |
+| Alice     | SIM             | 3                   | 33.21 segundos                          |
+|  |  |  |  |
+| **Média**     | 100%           | 4.00                | 24.76 segundos                           |
+| **Tempo para conclusão pelo especialista** | SIM | 5 | 12.07 segundos |
+
+
+    Alice: Gostei de como o alerta apareceu rápido, mas fiquei um pouco perdido tentando encontrar onde participar da discussão no fórum. Talvez deixar o botão mais visível ajudaria bastante. Fora isso, a informação sobre a queimada estava clara.
+   
+    Bruno: Consegui criar o fórum, mas demorei para entender como vincular meu texto ao alerta que já tinha feito. O editor é tranquilo de usar, só senti falta de alguma orientação sobre o que é importante detalhar. Depois que peguei o jeito, ficou fácil, mas no início foi meio confuso.
+
+   Cenário 4: Usuário acessando o site pelo celular em situação de emergência.
+
+| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
+|---------|-----------------|----------------------|---------------------------------|
+| Bruno       | SIM             | 5                    | 15.54 segundos                          |
+| Edenilson   | SIM             | 3                    | 21.42 segundos                          |
+| Alice       | SIM             | 4                    | 28.21 segundos                          |
+|  |  |  |  |
+| **Média**     | 100%           | 4.00                | 30.05 segundos                           |
+| **Tempo para conclusão pelo especialista** | SIM | 5 | 10.57 segundos |
+
+
+    Bruno:Tentei abrir o site pelo celular e funcionou, mas demorou um pouco para carregar com meu 4G ruim. Quando finalmente abriu, consegui criar o alerta. Nada impossível, só podia estar mais rápido num momento tenso.
+    
+    Edenilson: Usei o site no celular enquanto caminhava e deu certo.A localização automática funcionou, o que ajudou muito. Só que qualquer travadinha já deixa a gente nervoso numa situação dessas. Seria bom otimizar para quem não está parado e confortável.
+
+
+   Cenário 5: Moderador comunitário revisando alertas e fóruns.
+
+| Usuário | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
+|---------|-----------------|----------------------|---------------------------------|
+| Bruno       | SIM             | 5                    | 13.54 segundos                          |
+| Edenilson   | SIM             | 4                    | 20.42 segundos                          |
+| Alice       | SIM             | 5                    | 18.21 segundos                          |
+|  |  |  |  |
+| **Média**     | 100%           | 4.66                | 17.39 segundos                           |
+| **Tempo para conclusão pelo especialista** | SIM | 5 | 11.57 segundos |
+
+
+    Alice: Entrei para dar uma olhada nos alertas novos e senti falta de uma forma mais rápida de identificar os que já foram verificados. Consegui revisar, mas ficou meio trabalhoso. Se tivesse um marcador mais claro, ajudaria bastante.
+    
+    Bruno: Tentei organizar alguns fóruns que estavam repetidos e até deu para fazer, mas faltou uma ferramenta mais direta para sinalizar isso. Acabei tendo que abrir vários posts para entender. Funciona, mas não é muito eficiente.”
+    
+    Edenilson: Revisar os alertas foi tranquilo, mas senti falta de um painel só para quem ajuda a moderar. Fiquei pulando entre páginas para conferir tudo. Nada grave, só deixa o processo lento.
 
 ## Avaliação dos Testes de Usabilidade
 
-Tomando como base os resultados obtidos, foi possível verificar que a aplicação web apresenta bons resultados quanto à taxa de sucesso na interação dos usuários, tendo em vista que os cenários propostos foram concluídos com sucesso.
+Os resultados mostram que a aplicação possui um desempenho sólido no que diz respeito à taxa de sucesso dos usuários. Todos os cenários foram concluídos sem falhas, indicando que as funcionalidades essenciais estão plenamente operacionais.
 
-Além disso, a aplicação obteve também uma elevada satisfação subjetiva dos usuários no momento que realizavam os cenários propostos. Prova são as médias das avaliações em cada um dos cenários, que variou entre 4 (bom) e 5 (ótimo).
+A satisfação subjetiva também se manteve em um nível alto. As médias de avaliação variaram de 4 a 5, o que demonstra que, apesar de alguns pontos de atenção, a experiência geral foi considerada positiva pelos participantes.
 
-Com relação ao tempo para conclusão de cada tarefa/cenário, notamos discrepância entre a média de tempo dos usuários e o tempo do especialista/desenvolvedor em todos os cenários. Tal discrepância, em certa medida, é esperada, tendo em vista que o desenvolvedor já tem prévio conhecimento de toda a interface da aplicação, do posicionamento dos elementos, lógica de organização das páginas, etc.
+No entanto, ao comparar o tempo médio de execução entre os usuários e o especialista, surgem diferenças significativas em todos os cenários. Essa diferença é previsível, já que o especialista conhece profundamente a interface, a estrutura das páginas e o posicionamento dos elementos. Ainda assim, a discrepância chama atenção. Em alguns casos, o tempo do usuário chega a ser várias vezes maior que o do especialista, o que reforça a existência de barreiras de navegação ou clareza na interface.
 
-Contudo, tendo em vista que a diferença foi relevante (por exemplo, 113 segundos — média usuários — contra 25 segundos — especialista — no cenário três), e ainda os comentários feitos por alguns usuários, entendemos haver oportunidades de melhoria na usabilidade da aplicação.
-
+Além disso, os comentários feitos pelos usuários indicam pontos específicos que podem ser aprimorados, como a localização de botões, a clareza de campos obrigatórios, o uso de filtros e a experiência em dispositivos móveis. Esses fatores sugerem oportunidades claras de melhoria na usabilidade, com foco especial em tornar o caminho do usuário mais intuitivo e direto.
 
 
