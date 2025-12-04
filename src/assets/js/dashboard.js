@@ -35,6 +35,7 @@ const TYPE_CONFIG = {
 
 let currentUser = null;
 let currentType = "desmatamento";
+let map = null;
 
 async function loadUser() {
   try {
@@ -123,11 +124,7 @@ function renderSection(type) {
             Mapa da Região
           </h2>
         </div>
-        <iframe
-          src="${buildMapSrc(first)}"
-          style="border:none;width:100%;height:700px;border-radius:0.5rem;"
-          loading="lazy"
-        ></iframe>
+        <div id="map"></div>
       </div>
 
       <div class="bg-white rounded-xl shadow p-6">
@@ -162,18 +159,16 @@ function renderSection(type) {
     </section>
   `;
 
+  // Inicializar mapa após renderizar
+  setTimeout(() => {
+    if (map) {
+      map.remove();
+    }
+    initMap();
+    setupMapMarkers();
+  }, 100);
+
   markActiveSidebar(type);
-}
-
-function countLast7Days(alerts) {
-  const now = new Date();
-  const sevenDaysAgo = new Date(now);
-  sevenDaysAgo.setDate(now.getDate() - 7);
-
-  return alerts.filter((a) => {
-    const d = new Date(a.createdAt);
-    return d >= sevenDaysAgo;
-  }).length;
 }
 
 function buildMapSrc(alert) {
@@ -191,6 +186,17 @@ function buildMapSrc(alert) {
   const maxLat = lat + delta;
 
   return `https://www.openstreetmap.org/export/embed.html?bbox=${minLng}%2C${minLat}%2C${maxLng}%2C${maxLat}&layer=mapnik&marker=${lat}%2C${lng}`;
+}
+
+function countLast7Days(alerts) {
+  const now = new Date();
+  const sevenDaysAgo = new Date(now);
+  sevenDaysAgo.setDate(now.getDate() - 7);
+
+  return alerts.filter((a) => {
+    const d = new Date(a.createdAt);
+    return d >= sevenDaysAgo;
+  }).length;
 }
 
 function formatDate(iso) {
@@ -211,6 +217,27 @@ function markActiveSidebar(type) {
       btn.classList.remove("bg-white/10", "text-white");
     }
   });
+}
+
+function initMap() {
+  map = L.map("map").setView([-19.9679, -43.9211], 13);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; OpenStreetMap contributors",
+  }).addTo(map);
+}
+
+function setupMapMarkers() {
+  const alertasSalvos = JSON.parse(localStorage.getItem("alertas")) || [];
+  
+  if (map && alertasSalvos.length > 0) {
+    alertasSalvos.forEach((alerta) => {
+      if (alerta.lat && alerta.lng) {
+        L.marker([alerta.lat, alerta.lng])
+          .addTo(map)
+          .bindPopup(`<b>${alerta.titulo}</b><br>${alerta.descricao}<br>${alerta.dataCriacao}`);
+      }
+    });
+  }
 }
 
 function setupSidebarMobile() {
