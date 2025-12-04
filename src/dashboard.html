@@ -12,9 +12,14 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="icon" type="image/x-icon" href="assets/img/faviconn.svg" />
     <style>
-      #map, #dashboardMap {
+      #map {
         height: 700px;
         border-radius: 0.5rem;
+        position: relative;
+        z-index: 1;
+      }
+      #caixaModal {
+        z-index: 9999;
       }
     </style>
   </head>
@@ -172,14 +177,13 @@
         </div>
 
         <section class="space-y-6">
-          <div class="bg-white rounded-xl shadow p-6 mt-8">
+          <div class="bg-white rounded-xl shadow p-6">
             <div class="flex justify-between items-center mb-4">
               <h2 class="text-lg font-semibold text-gray-800">
                 Mapa da Região
               </h2>
             </div>
-           
-            <div id="dashboardMap"></div>
+            <div id="map"></div>
           </div>
 
           <div class="bg-white rounded-xl shadow p-6">
@@ -198,5 +202,7 @@
       <script src="./assets/js/dashboard.js"></script>
     </main>
   </body>
-</html>
 
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="./assets/js/dashboard.js"></script>
+</html>
