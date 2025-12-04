@@ -147,3 +147,4 @@ function novoAlerta() {
 
 window.addEventListener("load", initMap);
 document.getElementById("novoAlerta").addEventListener("click", novoAlerta);
+
