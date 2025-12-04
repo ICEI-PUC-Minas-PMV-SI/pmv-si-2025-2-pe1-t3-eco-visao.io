@@ -65,7 +65,7 @@ function renderSection(type) {
 
   const total = alerts.length;
   const areasMonitoradas = new Set(alerts.map((a) => `${a.lat},${a.lng}`)).size;
-  const last7 = countLast7Days(alerts); // nova métrica
+  const last7 = countLast7Days(alerts); 
   const first = alerts[0];
 
   const content = document.getElementById("content");
@@ -159,7 +159,7 @@ function renderSection(type) {
     </section>
   `;
 
-  // Inicializar mapa após renderizar
+  
   setTimeout(() => {
     if (map) {
       map.remove();
@@ -179,7 +179,7 @@ function buildMapSrc(alert) {
   const lat = alert.lat;
   const lng = alert.lng;
 
-  const delta = 0.02; // controla o zoom
+  const delta = 0.02; 
   const minLng = lng - delta;
   const minLat = lat - delta;
   const maxLng = lng + delta;
