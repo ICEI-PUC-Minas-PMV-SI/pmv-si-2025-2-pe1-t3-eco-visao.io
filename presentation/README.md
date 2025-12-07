@@ -39,7 +39,5 @@ O grupo deverá gravar um vídeo de demonstração do site desenvolvido.
 
 
 
-
-
-https://github.com/user-attachments/assets/80f524e8-594b-4921-b6ad-aad5afd4cdf2
+https://github.com/user-attachments/assets/e0860e86-8527-4fe5-9110-60d65bd8f72b
 
